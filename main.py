@@ -15,18 +15,14 @@ description = dedent(
     python netcat.py -t\\--target <ip> -p--port <port number> -s\\--server -c\\--command #sends a command to the netcat client
     ''')
 
-command_options = argparse.ArgumentParser(description="netcat tool 0.1v", formatter_class=argparse.RawTextHelpFormatter,
-                                          epilog=description)
+command_options = argparse.ArgumentParser(description="netcat tool 0.1v", formatter_class=argparse.RawTextHelpFormatter, epilog=description)
 
 command_options.add_argument('-t', "--target", help="enter the target ip")
-command_options.add_argument('-cs', "--command_shell", action="store_true",
-                             help="starts a command shell at the client side")
+command_options.add_argument('-cs', "--command_shell", action="store_true", help="starts a command shell at the client side")
 command_options.add_argument('-p', "--port", type=int, help="enter a port number")
 command_options.add_argument('-c', "--command", action="store_true", help="enter a command that is to executed in the terminal")
-command_options.add_argument('-s', "--server", action="store_true",
-                             help="if you specify this the netcat program will cat as a remote server")
-command_options.add_argument('-si', "--system_information", action="store_true",
-                             help="prints the target's system iformation")
+command_options.add_argument('-s', "--server", action="store_true", help="if you specify this the netcat program will cat as a remote server")
+command_options.add_argument('-si', "--system_information", action="store_true", help="prints the target's system iformation")
 
 arguments = command_options.parse_args()
 
