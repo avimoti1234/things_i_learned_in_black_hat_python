@@ -10,7 +10,7 @@ class ProxyServer:
         self.server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
     def run(self):
-        self.server.bind(("10.100.102.14", int(self.port_number)))
+        self.server.bind(("***.***.***.***", int(self.port_number)))
         print("[+]bound")
         self.server.listen(10)
         print("[+]listening")
